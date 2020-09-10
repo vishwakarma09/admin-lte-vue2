@@ -4,7 +4,7 @@ import store from '@/store'
 import App from './App.vue'
 
 /* eslint-disable-next-line */
-import * as fa from './lib/fontAwesome'
+import * as fas from './lib/fontAwesome'
 
 Vue.component('tree-menu', {
   template: `<div class="tree-menu">
