@@ -1,17 +1,40 @@
 <template>
   <div id="app">
-    <img alt="Vue logo" src="./assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
+    <template v-if="!isAuthenticated">
+      <p>
+        Not authenticated
+        <button @click="isAuthenticated = !isAuthenticated">{{ isAuthenticated ? 'un-': '' }}Authenticate</button>
+      </p>
+    </template>
+    <template v-else>
+      <p>Authenticate</p>
+      <font-awesome-icon :icon="['fas', 'user-secret']" />
+      <AdminLTE showControlSidebar="true" />
+      <button @click="isAuthenticated = !isAuthenticated">{{ isAuthenticated ? 'un-': '' }}Authenticate</button>
+    </template>
+
+    <router-view></router-view>
   </div>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
+import AdminLTE from './components/layouts/AdminLTE'
 
 export default {
   name: 'App',
   components: {
-    HelloWorld
+    AdminLTE
+  },
+  data: function() {
+    return {
+      isAuthenticated: false
+    }
+  },
+  beforeMount: async function() {
+    if (!this.isAuthenticated) {
+      // this.$router.push({ name: '@login'})
+      console.log('not authenticated')
+    }
   }
 }
 </script>
