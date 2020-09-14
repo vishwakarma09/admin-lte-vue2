@@ -1,5 +1,9 @@
 # Admin LTE 2 vue js
 
+Demo on https://boiling-plateau-27022.herokuapp.com/
+
+Contributions are welcome
+
 ## Project setup
 ```
 npm install
@@ -22,7 +26,3 @@ npm run lint
 
 ### Customize configuration
 See [Configuration Reference](https://cli.vuejs.org/config/).
-
-Demo on https://boiling-plateau-27022.herokuapp.com/
-
-Contributions are welcome
